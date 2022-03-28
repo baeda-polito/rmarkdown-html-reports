@@ -1,4 +1,4 @@
-# smartreport-template
+# Rmarkdown template for smart reporting
  Rmarkdown template of smartreporting
 
 ## How to use this template
