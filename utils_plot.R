@@ -1,30 +1,26 @@
 library(highcharter)
 
-my_own_theme <- hc_theme(
-  colors = c("red", "green", "blue"),
-  chart = list(
-    backgroundColor = NULL,
-    divBackgroundImage = "http://media3.giphy.com/media/FzxkWdiYp5YFW/giphy.gif"
+custom_font <- "Poppins"
+
+custom_theme <- hc_theme(
+  colors = c(
+    '#058DC7',
+    '#50B432',
+    '#ED561B',
+    '#DDDF00',
+    '#24CBE5',
+    '#64E572',
+    '#FF9655',
+    '#FFF263',
+    '#6AF9C4'
   ),
-  title = list(
-    style = list(
-      color = "#333333",
-      fontFamily = "Lato"
-    )
-  ),
-  subtitle = list(
-    style = list(
-      color = "#666666",
-      fontFamily = "Shadows Into Light"
-    )
-  ),
+  chart = list(backgroundColor = NULL),
+  title = list(style = list(fontFamily = custom_font)),
+  subtitle = list(style = list(fontFamily = custom_font)),
+  caption = list(    align = "center"),
   legend = list(
-    itemStyle = list(
-      fontFamily = "Tangerine",
-      color = "black"
-    ),
-    itemHoverStyle = list(
-      color = "gray"
-    )
+    itemStyle = list(fontFamily = custom_font,
+                     color = "black"),
+    itemHoverStyle = list(color = "gray")
   )
 )

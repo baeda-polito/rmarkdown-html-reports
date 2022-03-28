@@ -1,10 +1,33 @@
+/*----------GLOBAL VARIABLES---------*/
+:root {
+    --red: #ff000f;
+    --section-background: #F4FAFFFF;
+    --tobe-blue: #04005E;
+    --tobe-pink: #ff2079;
+    --baeda-blue: #2E4F97;
+    --baeda-orange: #F47806;
+    --baeda-light-blue: #D9EBF6;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+/*----------GOOGLE FONTS---------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
 
+/*----------BODY---------*/
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
+
+h1.title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    background-color: var(--baeda-orange)
+}
+
 
 h1 {
     display: block;
@@ -14,29 +37,7 @@ h1 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color: #04005E;
-}
-/*
-h1::before {
-    content: "";
-    display: block;
-    height: 200px;
-    margin: 2.75em 20px 40px 20px;
-    background-image: url("../img/baeda-abb.jpg");
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-*/
-
-h1::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    margin-bottom: 16px;
-    margin-top: 8px;
-    background-color: #ff000f
+    color: var(--baeda-blue);
 }
 
 
@@ -48,7 +49,7 @@ h2 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color: #04005E;
+    color: var(--baeda-blue);
 }
 
 h3 {
@@ -59,7 +60,7 @@ h3 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color: #04005E;
+    color: var(--baeda-blue);
 }
 
 h4 {
@@ -70,7 +71,7 @@ h4 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color: #04005E;
+    color: var(--baeda-blue);
 }
 
 h5 {
@@ -81,7 +82,7 @@ h5 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color: #04005E;
+    color: var(--baeda-blue);
 }
 
 h6 {
@@ -92,55 +93,52 @@ h6 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color: #04005E;
+    color: var(--baeda-blue);
 }
 
 /*----------------- links ---------------------*/
 
 a {
-    color: #4e89bf;
+    color: var(--baeda-orange);
 }
 
 a:hover {
-    color: #396892; /* darker color when hovering */
+    color: var(--baeda-orange); /* darker color when hovering */
 }
 
 /*------------Table of Contents (TOC)----------- */
-
-
-/* Active TOC links*/
-
-.list-group-item.active,
-.list-group-item.active:hover{
-    color: white;
-    background-color: #ff2079;
-    border-color: #ccc;
-}
-
-/* Hovered TOC links*/
-
-.list-group-item:hover {
-    color: white;
-    background-color: #ff2079;
-    border: none;
-}
 
 .tocify {
     border: none;   /*Removes border */
     border-radius: 0px; /* Gets rid of rounded corners on TOC */
     font-size: 16px;
     font-weight: bold;
-    color: #04005E;
+    color: var(--baeda-blue);
 }
 
+/* Active TOC links*/
+.list-group-item.active,
+.list-group-item.active:hover{
+    color: var(--baeda-blue);
+    background-color: var(--baeda-light-blue);
+    border-color: var(--section-background);
+}
+
+/* Hovered TOC links*/
+
+.list-group-item:hover {
+    color: var(--baeda-blue);
+    background-color: var(--baeda-light-blue);
+    border: none;
+}
 /*----------LOGO above TOC---------*/
 
 #TOC::before {
     content: "";
     display: block;
-    height: 50px;
-    background-image: url("../img/baeda-abb.jpg");
-    margin-bottom: 10;
+    height: 100px;
+    background-image: url("../img/baeda.jpg");
+    margin-bottom: 10px;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -148,8 +146,8 @@ a:hover {
 
 
 .sectionbox {
-    background: #F9F8FF;
-    border-radius: 5px;
+    background: var(--section-background);
+    border-radius: 10px;
     padding: 20px;
     margin-bottom: 10px;
 }

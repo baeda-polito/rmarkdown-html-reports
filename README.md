@@ -5,7 +5,7 @@
 
 ## How to use this template
 
-change icon
-change base theme colors
-change css
-chence template html
+1. change icon
+2. change base theme colors
+3. change css
+4. chence template html

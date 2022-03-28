@@ -1,23 +1,32 @@
 ---
-title: "main"
+title: "Report Template"
+author: "Author"
+date : "`r Sys.Date()`"
 output:
   html_document:
     # template: "template-basic/template.html"
     css: "css/clear.css"
     toc: true
     toc_float: true
+    number_sections: true
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(magrittr)
 library(kableExtra)
 source('utils_plot.R')
+
+library(highcharter)
+
+
+
 ```
 
 
 <div class = "sectionbox">
-## R Markdown
+# - Section
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -30,10 +39,13 @@ head(iris) %>%
   kable_styling()
 
 ```
+
+## - Subection
+wlreuiuwerfhiweuhrfiweuhfrwiu
 </div>
 
 <div class = "sectionbox">
-## R wegsdAF<C
+# - Section
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -48,18 +60,17 @@ data(diamonds, package = "ggplot2")
 
 data <- count(diamonds, cut, color)
 
-hc <- hchart(data, "column", hcaes(x = color, y = n, group = cut)) %>%
+hc <- hchart(data, "column", hcaes(x = color, y = n, group = cut)
+        ) %>%
   hc_yAxis(title = list(text = "Cases")) %>%
   hc_title(text = "Diamonds Are Forever") %>%
   hc_subtitle(text = "Source: Diamonds data set") %>%
-  hc_credits(enabled = TRUE, text = "http://jkunst.com/highcharter/") %>%
   hc_tooltip(sort = TRUE, table = TRUE) %>% 
-  hc_caption(text = "This is a caption text to show the style of this type of text")
+  hc_caption(text = "<b>Figure 1</b> This is a caption text to show the style of this type of text")
 
-# hc %>%
-#   hc_add_theme(my_own_theme)
-#
-hc
+hc %>%
+  hc_add_theme(custom_theme)
+
 ```
 
 </div>
