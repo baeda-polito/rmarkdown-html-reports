@@ -1,0 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #04005E;
+}
+/*
+h1::before {
+    content: "";
+    display: block;
+    height: 200px;
+    margin: 2.75em 20px 40px 20px;
+    background-image: url("../img/baeda-abb.jpg");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+*/
+
+h1::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    background-color: #ff000f
+}
+
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #04005E;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #04005E;
+}
+
+h4 {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #04005E;
+}
+
+h5 {
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #04005E;
+}
+
+h6 {
+    display: block;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #04005E;
+}
+
+/*----------------- links ---------------------*/
+
+a {
+    color: #4e89bf;
+}
+
+a:hover {
+    color: #396892; /* darker color when hovering */
+}
+
+/*------------Table of Contents (TOC)----------- */
+
+
+/* Active TOC links*/
+
+.list-group-item.active,
+.list-group-item.active:hover{
+    color: white;
+    background-color: #ff2079;
+    border-color: #ccc;
+}
+
+/* Hovered TOC links*/
+
+.list-group-item:hover {
+    color: white;
+    background-color: #ff2079;
+    border: none;
+}
+
+.tocify {
+    border: none;   /*Removes border */
+    border-radius: 0px; /* Gets rid of rounded corners on TOC */
+    font-size: 16px;
+    font-weight: bold;
+    color: #04005E;
+}
+
+/*----------LOGO above TOC---------*/
+
+#TOC::before {
+    content: "";
+    display: block;
+    height: 50px;
+    background-image: url("../img/baeda-abb.jpg");
+    margin-bottom: 10;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+.sectionbox {
+    background: #F9F8FF;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+}

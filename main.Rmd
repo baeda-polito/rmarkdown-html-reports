@@ -1,0 +1,65 @@
+---
+title: "main"
+output:
+  html_document:
+    # template: "template-basic/template.html"
+    css: "css/clear.css"
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+library(kableExtra)
+source('utils_plot.R')
+```
+
+
+<div class = "sectionbox">
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+head(iris) %>%
+  kbl() %>%
+  kable_styling()
+
+```
+</div>
+
+<div class = "sectionbox">
+## R wegsdAF<C
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+library(highcharter)
+library(dplyr)
+
+data(diamonds, package = "ggplot2")
+
+data <- count(diamonds, cut, color)
+
+hc <- hchart(data, "column", hcaes(x = color, y = n, group = cut)) %>%
+  hc_yAxis(title = list(text = "Cases")) %>%
+  hc_title(text = "Diamonds Are Forever") %>%
+  hc_subtitle(text = "Source: Diamonds data set") %>%
+  hc_credits(enabled = TRUE, text = "http://jkunst.com/highcharter/") %>%
+  hc_tooltip(sort = TRUE, table = TRUE) %>% 
+  hc_caption(text = "This is a caption text to show the style of this type of text")
+
+# hc %>%
+#   hc_add_theme(my_own_theme)
+#
+hc
+```
+
+</div>
