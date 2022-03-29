@@ -10,14 +10,17 @@ output:
     toc_float: true
     number_sections: true
     self_contained: true
+    includes:
+      after_body: 'html/footer.html'
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(magrittr)
 library(kableExtra)
-source('utils_plot.R')
+source(file.path('R','utils_plot.R'))
 
+library(dplyr)
 library(highcharter)
 
 
@@ -34,14 +37,16 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 
-head(iris) %>%
+df<-read.csv(file.path('data','power_small.csv'))%>%
+  dplyr::select(CET,Week_day, Month, Power_total)
+
+head(df) %>%
   kbl() %>%
   kable_styling()
 
 ```
 
 ## - Subection
-wlreuiuwerfhiweuhrfiweuhfrwiu
 </div>
 
 <div class = "sectionbox">
@@ -53,24 +58,19 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 
-library(highcharter)
-library(dplyr)
+df_bar <- df %>%
+  dplyr::group_by(Week_day, Month)%>%
+  dplyr::summarise(Power_avg = mean(Power_total, na.rm = T), .groups = "drop")
 
-data(diamonds, package = "ggplot2")
-
-data <- count(diamonds, cut, color)
-
-hc <- hchart(data, "column", hcaes(x = color, y = n, group = cut)
+hc <- hchart(df_bar, "column", hcaes(x = Month, y = Power_avg, group = Week_day)
         ) %>%
-  hc_yAxis(title = list(text = "Cases")) %>%
-  hc_title(text = "Diamonds Are Forever") %>%
-  hc_subtitle(text = "Source: Diamonds data set") %>%
-  hc_tooltip(sort = TRUE, table = TRUE) %>% 
-  hc_caption(text = "<b>Figure 1</b> This is a caption text to show the style of this type of text")
-
-hc %>%
+  hc_yAxis(title = list(text = "Electrical load [kW]")) %>%
+  hc_title(text = "Average electrical load") %>%
+  hc_subtitle(text = "Source: Substation C") %>%
+ # hc_tooltip(sort = TRUE, table = TRUE) %>% 
+  hc_caption(text = "<b>Figure 1</b> This is a caption text to show the style of this type of text") %>%
   hc_add_theme(custom_theme)
 
+hc
 ```
-
 </div>

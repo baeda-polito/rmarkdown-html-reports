@@ -151,3 +151,9 @@ a:hover {
     padding: 20px;
     margin-bottom: 10px;
 }
+
+/*----------LOGO above TOC---------*/
+footer {
+    text-align: center;
+    padding: 3px;
+}
