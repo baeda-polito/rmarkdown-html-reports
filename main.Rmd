@@ -23,8 +23,6 @@ source(file.path('R','utils_plot.R'))
 library(dplyr)
 library(highcharter)
 
-
-
 ```
 
 
