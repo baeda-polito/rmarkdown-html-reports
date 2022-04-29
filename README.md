@@ -1,12 +1,30 @@
 ![alt text](img/hero.png)
 
 # Rmarkdown template for smart reporting
-Rmarkdown template of smartreporting
+This repository permits to create a RMarkdown based *smart report* intended as an easy-to-use, web-based report. A smart report can be both static or interactive. Basic smart reporting relies upon static data automatically retrieved following a predefined schedule. More advanced smart reporting leave the user the freedom to retrieve specific data and select visualization that best suits its needs, enriching the tool flexibility to produce more desirable and custom outputs. For example, the user can select specific time frames, add comments, chose visualizations and set custom KPIs.
 
-
-The repository is structured as follows
+The repository is structured as follows:
 
 ```bash
+├── LICENSE
+├── R
+│   └── utils_plot.R
+├── README.md
+├── css
+│   └── clear.css
+├── data
+│   └── power_small.csv
+├── html
+│   ├── footer.html
+│   └── template.html
+├── img
+│   ├── baeda-abb.jpg
+│   ├── baeda.jpg
+│   └── hero.png
+├── knit_browser.R
+├── main.Rmd
+├── main.html
+└── smartreport-template.Rproj
 ```
 
 ## How to use this template
