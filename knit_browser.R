@@ -20,19 +20,6 @@ cat("\014")                 # Clears the console
 rm(list = ls())             # Remove all variables of the work space
 
 
-# my_html_document <-
-#   function(template = "html/template.html", ...) {
-#     base_format <- rmarkdown::html_document(...)
-# 
-#     template_arg <-
-#       which(base_format$pandoc$args == "--template") + 1L
-#     base_format$pandoc$args[template_arg] <- template
-# 
-#     base_format
-#   }
-
-
-# ######
 # 
 # param_list <- list(
 #   PlantName = "ABB SACE BUILDING",
@@ -53,8 +40,8 @@ rm(list = ls())             # Remove all variables of the work space
 
 
 out_path <- rmarkdown::render(
-  input = file.path("main.Rmd")
-  #output_file = file.path("report", "report.html"),
+  input = file.path("main.Rmd"),
+  output_file = file.path("output", "report.html"),
   #params = param_list
 )
 

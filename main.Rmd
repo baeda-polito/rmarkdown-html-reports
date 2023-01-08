@@ -4,7 +4,6 @@ author: "Author"
 date : "`r Sys.Date()`"
 output:
   html_document:
-    # template: "template-basic/template.html"
     css: "css/clear.css"
     toc: true
     toc_float: true
@@ -22,7 +21,6 @@ source(file.path('R','utils_plot.R'))
 
 library(dplyr)
 library(highcharter)
-
 ```
 
 
@@ -35,8 +33,8 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 
-df<-read.csv(file.path('data','power_small.csv'))%>%
-  dplyr::select(CET,Week_day, Month, Power_total)
+df <- read.csv(file.path('data', 'power_small.csv')) %>%
+  dplyr::select(CET, Week_day, Month, Power_total)
 
 head(df) %>%
   kbl() %>%
@@ -57,15 +55,16 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r}
 
 df_bar <- df %>%
-  dplyr::group_by(Week_day, Month)%>%
-  dplyr::summarise(Power_avg = mean(Power_total, na.rm = T), .groups = "drop")
+  dplyr::group_by(Week_day, Month) %>%
+  dplyr::summarise(Power_avg = mean(Power_total, na.rm = T),
+                   .groups = "drop")
 
-hc <- hchart(df_bar, "column", hcaes(x = Month, y = Power_avg, group = Week_day)
-        ) %>%
+hc <-
+  hchart(df_bar, "column", hcaes(x = Month, y = Power_avg, group = Week_day)) %>%
   hc_yAxis(title = list(text = "Electrical load [kW]")) %>%
   hc_title(text = "Average electrical load") %>%
   hc_subtitle(text = "Source: Substation C") %>%
- # hc_tooltip(sort = TRUE, table = TRUE) %>% 
+  # hc_tooltip(sort = TRUE, table = TRUE) %>%
   hc_caption(text = "<b>Figure 1</b> This is a caption text to show the style of this type of text") %>%
   hc_add_theme(custom_theme)
 
